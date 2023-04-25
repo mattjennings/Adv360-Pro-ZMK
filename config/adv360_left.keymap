@@ -5,12 +5,4 @@
 *
 */
 
-&mt {
-    tapping-term-ms = <100>;
-};
-
-&lt {
-    tapping-term-ms = <100>;
-};
-
 #include "adv360.keymap"
