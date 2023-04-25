@@ -43,6 +43,18 @@
             quick-tap-ms = <100>;
             global-quick-tap;
         };
+        homerow_mod: homerow_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MOD";
+            bindings =
+                <&kp>,
+                <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -50,11 +62,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                    &kp N1             &kp N2            &kp N3            &kp N4         &kp N5         &tog 1         &mo 3                &kp N6     &kp N7     &kp N8     &kp N9     &kp N0  &kp MINUS
-  &kp TAB                     &kp Q              &kp W             &kp E             &kp R          &kp T          &none         &none                 &kp Y      &kp U      &kp I      &kp O      &kp P   &kp BSLH
-  &kp ESC               &mt LSHFT A              &kp S             &kp D             &kp F          &kp G          &none  &kp LEFT_ALT             &kp LCTRL                         &kp LGUI  &kp RCTRL      &none          &kp H             &kp J                 &kp K                   &kp L        &quick_mt RSHIFT SEMI    &kp SQT
-&kp LSHFT  &mt LA(LC(LG(LSHIFT))) Z  &quick_mt LCTRL X  &quick_mt LALT C  &quick_mt LCMD V  &quick_lt 5 B          &none         &none  &kp LS(LC(LG(LALT)))      &none      &none  &kp PG_UP      &none      &none  &quick_lt 4 N  &quick_mt RCMD M  &quick_mt RALT COMMA  &quick_mt RCTRL PERIOD  &quick_mt RIGHT_SHIFT SLASH  &kp RSHFT
-    &mo 2                 &kp GRAVE           &kp CAPS          &kp LEFT         &kp RIGHT          &mo 4  &kp BACKSPACE  &kp CAPSLOCK             &kp PG_DN  &kp ENTER  &kp SPACE     &kp UP   &kp DOWN   &kp LBKT       &kp RBKT             &mo 2
+&kp EQUAL                             &kp N1                &kp N2               &kp N3               &kp N4         &kp N5         &tog 1         &mo 3                &kp N6     &kp N7     &kp N8     &kp N9     &kp N0  &kp MINUS
+  &kp TAB                              &kp Q                 &kp W                &kp E                &kp R          &kp T          &none         &none                 &kp Y      &kp U      &kp I      &kp O      &kp P   &kp BSLH
+  &kp ESC               &homerow_mod LSHFT A                 &kp S                &kp D                &kp F          &kp G          &none  &kp LEFT_ALT             &kp LCTRL                         &kp LGUI  &kp RCTRL      &none          &kp H                &kp J                    &kp K                      &kp L        &homerow_mod RSHIFT SEMI    &kp SQT
+&kp LSHFT  &homerow_mod LA(LC(LG(LSHIFT))) Z  &homerow_mod LCTRL X  &homerow_mod LALT C  &homerow_mod LCMD V  &quick_lt 4 B          &none         &none  &kp LS(LC(LG(LALT)))      &none      &none  &kp PG_UP      &none      &none  &quick_lt 4 N  &homerow_mod RCMD M  &homerow_mod RALT COMMA  &homerow_mod RCTRL PERIOD  &homerow_mod RIGHT_SHIFT SLASH  &kp RSHFT
+    &mo 2                          &kp GRAVE              &kp CAPS             &kp LEFT            &kp RIGHT          &mo 4  &kp BACKSPACE  &kp CAPSLOCK             &kp PG_DN  &kp ENTER  &kp SPACE     &kp UP   &kp DOWN   &kp LBKT       &kp RBKT                &mo 2
             >;
         };
 
